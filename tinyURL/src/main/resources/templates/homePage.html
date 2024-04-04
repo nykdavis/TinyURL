@@ -1,0 +1,93 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny URL Generator</title>
+</head>
+<body>
+    <h1>Tiny URL Generator</h1>
+    <form action="/generate" method="post">
+        <label for="originalUrl">Original URL:</label>
+        <input type="text" id="originalUrl" name="originalUrl">
+        <button type="submit">Generate</button>
+    </form>
+    <br>
+    <h3>Short URL:</h3>
+    <p th:text="${shortenUrl}"></p>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny URL Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333333;
+        }
+        label {
+            font-size: 18px;
+            color: #555555;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .short-url {
+            font-size: 20px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tiny URL Generator</h1>
+        <form action="/generate" method="post">
+            <label for="originalUrl">Enter your long URL:</label><br>
+            <input type="text" id="originalUrl" name="originalUrl"><br>
+            <button type="submit">Generate</button>
+        </form>
+        <div class="short-url">
+            <h3>Short URL:</h3>
+            <p th:text="${shortenUrl}"></p>
+        </div>
+    </div>
+</body>
+</html>
